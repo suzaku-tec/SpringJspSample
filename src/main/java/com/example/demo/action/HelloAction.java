@@ -27,11 +27,11 @@ public class HelloAction  {
 		List<String> memberList = Arrays.asList("yusei", "jack", "crow");
 		model.addAttribute("memberList", memberList);
 		
-		for(String name: beanFactory.getBeanDefinitionNames()) {
-			if("requestDataValueProcessor".equals(name)) {
-				System.out.println(beanFactory.getBean(name).getClass());
-			}
-		}
+//		for(String name: beanFactory.getBeanDefinitionNames()) {
+//			if("requestDataValueProcessor".equals(name)) {
+//				System.out.println(beanFactory.getBean(name).getClass());
+//			}
+//		}
 		
 		// 利用するJSP
 		return "hello";
@@ -39,11 +39,17 @@ public class HelloAction  {
 	
 	@GetMapping("/")
 	public String index() {
-		for(String name: beanFactory.getBeanDefinitionNames()) {
-			if("requestDataValueProcessor".equals(name)) {
-				System.out.println(beanFactory.getBean(name).getClass());
-			}
-		}
+//		for(String name: beanFactory.getBeanDefinitionNames()) {
+//			if("requestDataValueProcessor".equals(name)) {
+//				System.out.println(beanFactory.getBean(name).getClass());
+//			}
+//		}
 		return "index";
+	}
+	
+	@PostMapping("/complete")
+	@TransactionTokenCheck
+	public String complete() {
+		return "complete";
 	}
 }

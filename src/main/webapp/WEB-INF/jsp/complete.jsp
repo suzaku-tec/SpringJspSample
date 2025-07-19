@@ -8,9 +8,8 @@
 	<title>hello-jsp</title>
 </head>
 <body>
-	<form:form action="complete" method="post">
-		hello! <c:forEach items="${memberList}" var="member"><c:out value="${member}"/>. </c:forEach>
-		<input type="submit" value="完了">
+	<form:form>
+		Complate!
 	</form:form>
 </body>
 </html>
